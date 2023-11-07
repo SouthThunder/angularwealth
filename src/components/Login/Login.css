@@ -1,0 +1,64 @@
+.login{
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.login > .container{
+    height: 100%;
+    width: 30%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.login > .container > form{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: var(--sm-border);
+    padding: 2rem;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .5);
+}
+
+.login > .container > form > h1{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+}
+
+.login > .container > form > input{
+    width: 100%;
+    padding: 1rem;
+    margin: 1rem 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    background-color: #F0EFFF;
+}
+
+.login > .container > form > button{
+    width: 100%;
+    margin: 1rem 0;
+    background-color: #4D47C3;
+    padding: 1rem;
+}
+
+.login > .container > form > .logopt{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.login > .container > form > .logopt > img{
+    width: 3rem;
+    height: 3rem;
+    margin: 0 .5rem;
+    cursor: pointer;
+    border-radius: 50%;
+}

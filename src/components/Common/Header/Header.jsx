@@ -20,10 +20,10 @@ function Header() {
             </a>
           </li>
           <li>
-            <a href="/">About</a>
+            <a href="/login">Ingresar</a>
           </li>
           <li>
-            <a href="/">Contact</a>
+            <a href="/">Registrarse</a>
           </li>
           <button className="nav-btn nav-close-btn" onClick={showNavBar}>
             <FaTimes />
