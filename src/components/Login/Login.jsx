@@ -22,7 +22,7 @@ export const Login = () => {
   };
 
   return (
-    <div className="login">
+    <div className="login-register">
       <div className="container">
         <form onSubmit={handleSubmit}>
           <h1>Inicia Sesión</h1>
@@ -33,7 +33,7 @@ export const Login = () => {
             placeholder="Correo electronico"
             onChange={handleLoginFormChange}
           />
-          <Password handleLoginFormChange={handleLoginFormChange}/>
+          <Password handleInputChange={handleLoginFormChange} text='Contraseña' name='password'/>
           <Button text='Iniciar'/>
           <p>O continua con</p>
           <div className="logopt">

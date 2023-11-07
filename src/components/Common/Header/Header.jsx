@@ -23,7 +23,7 @@ function Header() {
             <a href="/login">Ingresar</a>
           </li>
           <li>
-            <a href="/">Registrarse</a>
+            <a href="/register">Registrarse</a>
           </li>
           <button className="nav-btn nav-close-btn" onClick={showNavBar}>
             <FaTimes />
