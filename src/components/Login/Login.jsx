@@ -28,11 +28,12 @@ export const Login = () => {
           <h1>Inicia Sesión</h1>
 
           <input
+            name="email"
             type="email"
             placeholder="Correo electronico"
             onChange={handleLoginFormChange}
           />
-          <Password/>
+          <Password handleLoginFormChange={handleLoginFormChange}/>
           <Button text='Iniciar'/>
           <p>O continua con</p>
           <div className="logopt">

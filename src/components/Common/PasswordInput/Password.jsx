@@ -6,7 +6,7 @@ import Input from "@material-ui/core/Input";
 import { useState } from "react";
 import "./Password.css";
 
-export const Password = () => {
+export const Password = ({handleLoginFormChange}) => {
     const [values, setValues] = useState(false);
 
     const handleClickShowPassword = () => {
@@ -16,6 +16,8 @@ export const Password = () => {
     return (
         <Input
             className="pinput"
+            name="password"
+            onChange={handleLoginFormChange}
             placeholder="Contraseña"
             type={values ? "text" : "password"}
             // onChange={handleLoginFormChange}
