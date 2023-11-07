@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Button from "../Common/Buttons/Button";
+import { Password } from "../Common/PasswordInput/Password";
 import "./Login.css";
 
 export const Login = () => {
@@ -7,7 +8,6 @@ export const Login = () => {
     email: "",
     password: "",
   });
-  const [values, setValues] = useState(false);
 
   const handleLoginFormChange = (event) => {
     setLoginForm({
@@ -15,10 +15,6 @@ export const Login = () => {
       [event.target.name]: event.target.value,
     });
   };
-
-  const handleClickShowPassword = () => {
-    setValues(!values);
-};
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -36,14 +32,7 @@ export const Login = () => {
             placeholder="Correo electronico"
             onChange={handleLoginFormChange}
           />
-
-          <input
-            type={
-              values ? 'text' : 'password'
-            }
-            placeholder="Contraseña"
-            onChange={handleLoginFormChange}
-          />
+          <Password/>
           <Button text='Iniciar'/>
           <p>O continua con</p>
           <div className="logopt">
