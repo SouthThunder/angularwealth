@@ -59,9 +59,9 @@
     align-items: center;
 }
 
-.login-register > .container > form > .logopt > img{
-    width: 3rem;
-    height: 3rem;
+.login-register > .container > form > .logopt > svg{
+    width: 2rem;
+    height: 2rem;
     margin: 0 .5rem;
     cursor: pointer;
     border-radius: 50%;

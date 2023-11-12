@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import Button from "../Common/Buttons/Button";
+import Header from "../Common/Header/Header";
+import Footer from "../Common/Footer/Footer";
 import { Password } from "../Common/PasswordInput/Password";
+import {FaFacebook, FaGoogle} from 'react-icons/fa'
 import "./Login.css";
 
 export const Login = () => {
@@ -34,31 +37,34 @@ export const Login = () => {
   };
 
   return (
-    <div className="login-register">
-      <div className="container">
-        <form onSubmit={handleSubmit}>
-          <h1>Inicia Sesión</h1>
-
-          <input
-            name="email"
-            type="email"
-            placeholder="Correo electrónico"
-            onChange={handleLoginFormChange}
-          />
-          <Password
-            handleInputChange={handleLoginFormChange}
-            text="Contraseña"
-            name="password"
-          />
-          <Button text="Iniciar" />
-          <p>O continua con</p>
-          {formError && <p className="error-message">{formError}</p>}
-          <div className="logopt">
-            <img src="https://i.ibb.co/1J6w2PM/google.png" alt="google" />
-            <img src="https://i.ibb.co/1J6w2PM/google.png" alt="google" />
-          </div>
-        </form>
+    <>
+      <Header />
+      <div className="login-register">
+        <div className="container">
+          <form onSubmit={handleSubmit}>
+            <h1>Inicia Sesión</h1>
+            <input
+              name="email"
+              type="email"
+              placeholder="Correo electrónico"
+              onChange={handleLoginFormChange}
+            />
+            <Password
+              handleInputChange={handleLoginFormChange}
+              text="Contraseña"
+              name="password"
+            />
+            <Button text="Iniciar" />
+            <p>O continua con</p>
+            {formError && <p className="error-message">{formError}</p>}
+            <div className="logopt">
+              <FaFacebook/>
+              <FaGoogle/>
+            </div>
+          </form>
+        </div>
       </div>
-    </div>
+      <Footer />
+    </>
   );
 };

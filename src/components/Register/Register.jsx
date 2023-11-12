@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import Button from "../Common/Buttons/Button";
+import Header from "../Common/Header/Header";
+import Footer from "../Common/Footer/Footer";
 import { Password } from "../Common/PasswordInput/Password";
+import {FaFacebook, FaGoogle} from 'react-icons/fa'
 
 export const Register = () => {
     const [formData, setFormData] = useState({
@@ -47,49 +50,53 @@ export const Register = () => {
     };
   
     return (
-      <div className="login-register">
-        <div className="container">
-          <form onSubmit={handleSubmit}>
-            <h1>Registrate</h1>
-            <input
-              type="text"
-              placeholder="Nombre"
-              name="firstName"
-              onChange={handleChange}
-            />
-            <input
-              type="text"
-              placeholder="Apellido"
-              name="lastName"
-              onChange={handleChange}
-            />
-            <input
-              type="text"
-              placeholder="Email"
-              name="email"
-              onChange={handleChange}
-            />
-            <Password
-              handleInputChange={handleChange}
-              text="Contraseña"
-              name="password"
-            />
-            <Password
-              handleInputChange={handleChange}
-              text="Confirmar contraseña"
-              name="confirmPassword"
-            />
-            {!passwordsMatch && <p className="error-message">Las contraseñas no coinciden</p>}
-            {formError && <p className="error-message">{formError}</p>}
-            <Button text="Registrate" />
-            <p>O continua con</p>
-            <div className="logopt">
-              <img src="https://i.ibb.co/1J6w2PM/google.png" alt="google" />
-              <img src="https://i.ibb.co/1J6w2PM/google.png" alt="google" />
-            </div>
-          </form>
+      <>
+        <Header />
+        <div className="login-register">
+          <div className="container">
+            <form onSubmit={handleSubmit}>
+              <h1>Registrate</h1>
+              <input
+                type="text"
+                placeholder="Nombre"
+                name="firstName"
+                onChange={handleChange}
+              />
+              <input
+                type="text"
+                placeholder="Apellido"
+                name="lastName"
+                onChange={handleChange}
+              />
+              <input
+                type="text"
+                placeholder="Email"
+                name="email"
+                onChange={handleChange}
+              />
+              <Password
+                handleInputChange={handleChange}
+                text="Contraseña"
+                name="password"
+              />
+              <Password
+                handleInputChange={handleChange}
+                text="Confirmar contraseña"
+                name="confirmPassword"
+              />
+              {!passwordsMatch && <p className="error-message">Las contraseñas no coinciden</p>}
+              {formError && <p className="error-message">{formError}</p>}
+              <Button text="Registrate" />
+              <p>O continua con</p>
+              <div className="logopt">
+              <FaFacebook/>
+              <FaGoogle/>
+              </div>
+            </form>
+          </div>
         </div>
-      </div>
+        <Footer />
+      </>
     );
   };
   
