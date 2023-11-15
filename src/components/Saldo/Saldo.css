@@ -1,0 +1,73 @@
+.container{
+    display: flex;
+}
+
+.saldo{
+    width: 100%;
+    height: 100%;
+    margin: auto 0;
+}
+
+.title{
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.saldo > .top{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+/* Component gastos-ingresos */
+
+.gastos-ingresos{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin: 2rem 0;
+    flex: 1;
+}
+
+.gastos-ingresos > .holder{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 250px;
+    height: 200px;
+    border: 1px solid var(--secondary-color);
+    border-radius: var(--md-border);
+}
+
+.gastos-ingresos > .holder > h2{
+    margin: 0 auto;
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-align: center;
+}
+
+.gastos-ingresos > .holder > .value{
+    padding: 1rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.gastos-ingresos > .holder > p{
+    margin: 0 auto;
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-align: center;
+}
+
+
+/* End component gastos-ingresos */

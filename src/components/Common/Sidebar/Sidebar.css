@@ -1,9 +1,11 @@
 .sidebar{
+    position: relative;
     display: flex;
     flex-direction: column;
     background-color: var(--tertiary-color);
-    width: 350px;
+    width: 380px;
     height: 100%;
+    float: left;
 }
 .sidebar h1,
 .sidebar h3,
