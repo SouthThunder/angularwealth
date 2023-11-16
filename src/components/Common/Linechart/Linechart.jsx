@@ -1,39 +1,98 @@
-import React from 'react';
-import { Line } from 'react-chartjs-2';
-import Chart from 'chart.js/auto';
-import './Linechart.css';
+import React from "react";
+import Chart from "react-apexcharts";
 
+import "./Linechart.css";
 
-export const Linechart = () => {
-    const data = {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-        datasets: [
-            {
-                label: 'My First Dataset',
-                data: [65, 59, 80, 81, 56, 55, 40],
-                fill: true,
-                borderColor: 'rgba(255, 99, 132, 1)',
-                backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                tension: 0.1
-            }
-        ]
+export class Linechart extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      series: [
+        {
+          name: "Sales",
+          data: [4, 3, 10, 9, 29, 19, 22, 9, 12, 7, 19, 5, 13, 9, 17, 2, 7, 5],
+        },
+      ],
+      options: {
+        chart: {
+          height: 350,
+          type: "line",
+        },
+        forecastDataPoints: {
+          count: 0,
+        },
+        stroke: {
+          width: 5,
+          curve: "smooth",
+        },
+        xaxis: {
+          type: "datetime",
+          categories: [
+            "1/11/2000",
+            "2/11/2000",
+            "3/11/2000",
+            "4/11/2000",
+            "5/11/2000",
+            "6/11/2000",
+            "7/11/2000",
+            "8/11/2000",
+            "9/11/2000",
+            "10/11/2000",
+            "11/11/2000",
+            "12/11/2000",
+            "1/11/2001",
+            "2/11/2001",
+            "3/11/2001",
+            "4/11/2001",
+            "5/11/2001",
+            "6/11/2001",
+          ],
+          tickAmount: 10,
+          labels: {
+            formatter: function (value, timestamp, opts) {
+              return opts.dateFormatter(new Date(timestamp), "dd MMM");
+            },
+          },
+        },
+        title: {
+          text: "Tu resumen este año",
+          align: "left",
+          style: {
+            fontSize: "20px",
+            color: "#000",
+          },
+        },
+        fill: {
+          type: "gradient",
+          gradient: {
+            shade: "dark",
+            gradientToColors: ["#FF5BEF"],
+            shadeIntensity: 1,
+            type: "horizontal",
+            opacityFrom: 1,
+            opacityTo: 1,
+            stops: [0, 100],
+          },
+        },
+        yaxis: {
+          min: -10,
+          max: 40,
+        },
+      },
     };
+  }
 
-    const options = {
-        scales: {
-            yAxes: [
-                {
-                    ticks: {
-                        beginAtZero: true
-                    }
-                }
-            ]
-        }
-    };
-
+  render() {
     return (
-        <div className='chart'>
-            <Line data={data} options={options} />
-        </div>
+      <div className="chart">
+        <Chart
+          options={this.state.options}
+          series={this.state.series}
+          type="line"
+          height={350}
+        />
+      </div>
     );
-};
+  }
+}
