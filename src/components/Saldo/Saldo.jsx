@@ -8,7 +8,7 @@ export const Saldo = () => {
   return (
     <div className="container">
       <Sidebar />
-      <div className="saldo">
+      <div className="dashboard-container">
         <h1 className="title">Saldo</h1>
         <hr />
         <div className="top">

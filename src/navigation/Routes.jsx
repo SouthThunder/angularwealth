@@ -5,7 +5,8 @@ import {Home} from "../components/Home/Home";
 import {Login} from '../components/Login/Login';
 import {Register} from '../components/Register/Register';
 import { Saldo } from "../components/Saldo/Saldo";
-import Estadisticas from "../components/Estadisticas/Estadisticas";
+import {Estadisticas} from "../components/Estadisticas/Estadisticas";
+import {Tarjetas} from "../components/Tarjetas/Tarjetas";
 
 // const PrivateRoute = ({ component: Component, authenticated }) => (
 //   <Route
@@ -28,6 +29,7 @@ const Routing = () => {
         <Route path='/register' element={<Register/>}/>
         <Route path="/inicio" element={<Saldo/>}/>
         <Route path="/estadisticas" element={<Estadisticas/>}/>
+        <Route path="/tarjetas" element={<Tarjetas/>}/>
         {/* <PrivateRoute
           path="/debt"
           component={Saldo}

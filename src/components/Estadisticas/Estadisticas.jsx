@@ -1,15 +1,14 @@
 import React from "react";
-import "./Estadisticas.css";
 import { Sidebar } from "../Common/Sidebar/Sidebar";
 import { Piechart } from "../Common/Piechart/Piechart";
 import { Linechart } from "../Common/Linechart/Linechart";
 import { BarChart } from "../Common/Barchart/Barchart";
 
-function Estadisticas() {
+export const Estadisticas = () => {
   return (
     <div className="container">
       <Sidebar />
-      <div className="estadisticas">
+      <div className="dashboard-container">
         <h1 className="title">Estadísticas</h1>
         <hr />
         <div className="top">
@@ -25,4 +24,3 @@ function Estadisticas() {
   );
 }
 
-export default Estadisticas;

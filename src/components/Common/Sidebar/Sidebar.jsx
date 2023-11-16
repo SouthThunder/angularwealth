@@ -37,7 +37,7 @@ export const Sidebar = () => {
           </li>
           <li>
             <FaDollarSign />
-            <Button text="Deudas" />
+            <Button text="Deudas" onClick={() => navigate('/deudas')}/>
           </li>
           <li>
             <FiBarChart2 />
@@ -45,7 +45,7 @@ export const Sidebar = () => {
           </li>
           <li>
             <FaCreditCard />
-            <Button text="Tarjetas" />
+            <Button text="Tarjetas" onClick={() => navigate('/tarjetas')}/>
           </li>
         </ul>
       </div>

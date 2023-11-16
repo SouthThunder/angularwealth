@@ -1,0 +1,7 @@
+
+.rccs__card,
+.rccs__card--back,
+.rccs,
+.rccs__card--front {
+    border-radius: var(--md-border);
+}
