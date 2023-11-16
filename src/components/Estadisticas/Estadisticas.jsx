@@ -3,6 +3,7 @@ import "./Estadisticas.css";
 import { Sidebar } from "../Common/Sidebar/Sidebar";
 import { Piechart } from "../Common/Piechart/Piechart";
 import { Linechart } from "../Common/Linechart/Linechart";
+import { BarChart } from "../Common/Barchart/Barchart";
 
 function Estadisticas() {
   return (
@@ -14,6 +15,10 @@ function Estadisticas() {
         <div className="top">
           <Linechart />
           <Piechart />
+        </div>
+        <div className="bottom">
+          <h2>Tus categorías</h2>
+          <BarChart />
         </div>
       </div>
     </div>

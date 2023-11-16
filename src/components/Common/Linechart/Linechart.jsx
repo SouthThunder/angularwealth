@@ -11,8 +11,9 @@ export const Linechart = () => {
             {
                 label: 'My First Dataset',
                 data: [65, 59, 80, 81, 56, 55, 40],
-                fill: false,
-                borderColor: 'rgb(75, 192, 192)',
+                fill: true,
+                borderColor: 'rgba(255, 99, 132, 1)',
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
                 tension: 0.1
             }
         ]
@@ -31,7 +32,7 @@ export const Linechart = () => {
     };
 
     return (
-        <div className='linechart'>
+        <div className='chart'>
             <Line data={data} options={options} />
         </div>
     );
