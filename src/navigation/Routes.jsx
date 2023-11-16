@@ -5,6 +5,7 @@ import {Home} from "../components/Home/Home";
 import {Login} from '../components/Login/Login';
 import {Register} from '../components/Register/Register';
 import { Saldo } from "../components/Saldo/Saldo";
+import Estadisticas from "../components/Estadisticas/Estadisticas";
 
 // const PrivateRoute = ({ component: Component, authenticated }) => (
 //   <Route
@@ -25,7 +26,8 @@ const Routing = () => {
         <Route exact path="/" element={<Home/>} />
         <Route path="/login" element={<Login/>}/>
         <Route path='/register' element={<Register/>}/>
-        <Route path="/test" element={<Saldo/>}/>
+        <Route path="/inicio" element={<Saldo/>}/>
+        <Route path="/estadisticas" element={<Estadisticas/>}/>
         {/* <PrivateRoute
           path="/debt"
           component={Saldo}

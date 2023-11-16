@@ -9,11 +9,14 @@ import { FaGear } from "react-icons/fa6";
 import { FiHelpCircle, FiBarChart2 } from "react-icons/fi";
 import { BsBell, BsFolder } from "react-icons/bs";
 import { MdShowChart } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 
 import "./Sidebar.css";
 import Button from "../Buttons/Button";
 
 export const Sidebar = () => {
+  const navigate = useNavigate()
+
   return (
     <div className="sidebar">
       <div className="logo">
@@ -30,7 +33,7 @@ export const Sidebar = () => {
         <ul>
           <li>
             <FaHome />
-            <Button text="Inicio"> </Button>
+            <Button text="Inicio" onClick={() => navigate('/inicio')} />
           </li>
           <li>
             <FaDollarSign />
@@ -38,7 +41,7 @@ export const Sidebar = () => {
           </li>
           <li>
             <FiBarChart2 />
-            <Button text="Estadisticas" />
+            <Button text="Estadisticas" onClick={() => navigate('/estadisticas')}/>
           </li>
           <li>
             <FaCreditCard />

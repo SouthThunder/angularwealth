@@ -13,7 +13,7 @@ function ItemList({ text, items }) {
       </div>
       <hr />
       {items && items.length > 0 ? (
-        items.map((item) => (
+        items[option].map((item) => (
           <div key={item.id}>
             <h2>{item.name}</h2>
             <p>{item.description}</p>
