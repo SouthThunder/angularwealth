@@ -1,0 +1,23 @@
+.tipocambio{
+    padding: 2rem;
+    width: 370px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tipocambio > ul{
+    width: 100%;
+}
+
+.tipocambio > ul > .item{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.tipocambio picture{
+    width: 2.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+}

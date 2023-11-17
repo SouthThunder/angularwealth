@@ -8,8 +8,8 @@ function ItemList({ text, items }) {
     <div className="itemlist">
       <h2>{text}</h2>
       <div className="options">
-        <p tabIndex="0" onClick={() => setOption(0)}>Gastos</p>
-        <p tabIndex="0" onClick={() => setOption(1)}>Ingresos</p>
+        <p tabIndex="0" onClick={() => setOption(0)} onKeyDown={() => setOption(0)}>Gastos</p>
+        <p tabIndex="0" onClick={() => setOption(1)} onKeyDown={() => setOption(1)}>Ingresos</p>
       </div>
       <hr />
       {items && items.length > 0 ? (

@@ -1,6 +1,8 @@
 import React from "react";
 import { Sidebar } from "../Common/Sidebar/Sidebar";
-import  CreditCardUi  from "../Common/CreditCardUI/CreditCardUI";
+import CreditCardUi from "../Common/CreditCardUI/CreditCardUI";
+import ItemList from "../Common/Itemlist/Itemlist";
+import List from "../Common/TipoCambio/Tipocambio";
 
 export const Tarjetas = () => {
   return (
@@ -10,12 +12,13 @@ export const Tarjetas = () => {
         <h1 className="title">Tarjetas</h1>
         <hr />
         <div className="top">
+          <div className="card">
             <CreditCardUi />
+          </div>
+        <ItemList/>
         </div>
         <div className="bottom">
-          <h2>Ingresos</h2>
-          <p className="value">$ 569,230.03</p>
-          <p>+18 % esta semana</p>
+          <List />
         </div>
       </div>
     </div>
