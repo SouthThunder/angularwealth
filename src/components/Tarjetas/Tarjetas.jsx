@@ -12,10 +12,8 @@ export const Tarjetas = () => {
         <h1 className="title">Tarjetas</h1>
         <hr />
         <div className="top">
-          <div className="card">
-            <CreditCardUi />
-          </div>
-        <ItemList/>
+          <CreditCardUi />
+          <ItemList />
         </div>
         <div className="bottom">
           <List />

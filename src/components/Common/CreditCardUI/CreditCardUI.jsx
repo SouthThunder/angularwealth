@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Cards from "react-credit-cards";
 import "react-credit-cards/es/styles-compiled.css";
+import "./CreditCardUI.css";
 
 const CreditCard = () => {
   const [card, setCard] = useState({
@@ -34,7 +35,7 @@ const CreditCard = () => {
   };
 
   return (
-    <>
+    <div className="card">
       <div className="rccs__card rccs__card--unknown">
         <Cards
           number={card.number}
@@ -48,7 +49,7 @@ const CreditCard = () => {
       <br />
       <form>
         <div className="row">
-          <div className="col-sm-11">
+          <div className="row-col">
             <label htmlFor="name">Card Number</label>
             <input
               type="text"
@@ -62,7 +63,7 @@ const CreditCard = () => {
         </div>
         <br />
         <div className="row">
-          <div className="col-sm-11">
+          <div className="row-col">
             <label htmlFor="name">Card Name</label>
             <input
               type="text"
@@ -76,7 +77,7 @@ const CreditCard = () => {
         </div>
         <br />
         <div className="row">
-          <div className="col-sm-6">
+          <div className="row-col">
             <label htmlFor="name">Expiration Date</label>
             <input
               type="text"
@@ -87,7 +88,7 @@ const CreditCard = () => {
               onFocus={handleFocus}
             ></input>
           </div>
-          <div className="col-sm-5">
+          <div className="row-col">
             <label htmlFor="name">CVV</label>
             <input
               type="tel"
@@ -100,7 +101,7 @@ const CreditCard = () => {
           </div>
         </div>
       </form>
-    </>
+    </div>
   );
 };
 

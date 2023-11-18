@@ -1,3 +1,27 @@
+.card{
+    display: flex;
+    flex-direction: column;
+}
+
+.card form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.card form .row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.card form .row .row-col{
+    display: flex;
+    flex-direction: column;
+}
 
 .rccs__card,
 .rccs__card--back,
@@ -5,3 +29,4 @@
 .rccs__card--front {
     border-radius: var(--md-border);
 }
+
