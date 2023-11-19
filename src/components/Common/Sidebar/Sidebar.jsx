@@ -1,4 +1,3 @@
-import React from "react";
 import {
   FaHome,
   FaDollarSign,
@@ -10,11 +9,13 @@ import { FiHelpCircle, FiBarChart2 } from "react-icons/fi";
 import { BsBell, BsFolder } from "react-icons/bs";
 import { MdShowChart } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
+import {useSelector}  from 'react-redux' 
 
 import "./Sidebar.css";
 import Button from "../Buttons/Button";
 
 export const Sidebar = () => {
+  const user = useSelector(state => state.user)
   const navigate = useNavigate()
 
   return (
@@ -25,7 +26,7 @@ export const Sidebar = () => {
       </div>
       <div className="user">
         <FaUserCircle />
-        <h3>Nombre de Usuario</h3>
+        <h3>{user.name + ' ' + user.lastname}</h3>
         <BsBell />
       </div>
       <div className="section">
@@ -33,7 +34,7 @@ export const Sidebar = () => {
         <ul>
           <li>
             <FaHome />
-            <Button text="Inicio" onClick={() => navigate('/inicio')} />
+            <Button text="Inicio" onClick={() => navigate('/')} />
           </li>
           <li>
             <FaDollarSign />

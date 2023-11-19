@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Home } from "../components/Home/Home";
 import { Login } from "../components/Login/Login";
@@ -9,14 +9,18 @@ import { Tarjetas } from "../components/Tarjetas/Tarjetas";
 import PrivateRoutes from "../utils/PrivateRoute";
 import Cookie from "js-cookie";
 import { authToken } from "../services/users";
+import { useDispatch } from "react-redux";
+import { login } from "../redux/userSlice";
 
 const Routing = () => {
   const [auth, setAuth] = useState(false);
-  const token = Cookie.get("token");
+  const firstLoad = useRef(true)
+  const dispatch = useDispatch();
+
   const verifyToken = async () => {
-    const res = await authToken(token);
+    const res = await authToken(Cookie.get("token"));
     if (res?.status === 200) {
-      console.log(res.data)
+      dispatch(login(res.data));
       setAuth(true);
     } else {
       setAuth(false);
@@ -24,10 +28,11 @@ const Routing = () => {
   };
 
   useEffect(() => {
-    if(token){
+    if(Cookie.get("token") && firstLoad.current){
       verifyToken();
+      firstLoad.current = false;
     }
-  }, [token]);
+  }, []);
 
   return (
     <BrowserRouter>

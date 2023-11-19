@@ -1,9 +1,8 @@
-import React from "react";
+import { useState } from "react";
 import "./Itemlist.css";
 
 function ItemList({ text, items }) {
-  const [option, setOption] = React.useState(null);
-  console.log(option);
+  const [option, setOption] = useState(null);
   return (
     <div className="itemlist">
       <h2>{text}</h2>
