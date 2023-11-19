@@ -52,7 +52,7 @@ export const Register = () => {
     return (
       <>
         <Header />
-        <div className="login-register">
+        <div className="login-register" style={{marginTop: '1%', marginBottom: '1%'}}>
           <div className="container">
             <form onSubmit={handleSubmit}>
               <h1>Registrate</h1>
