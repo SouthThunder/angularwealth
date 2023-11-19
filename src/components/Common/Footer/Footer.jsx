@@ -22,16 +22,10 @@ function Footer() {
           <div className="sb-footer-links-div">
             <h4>Resources</h4>
             <a href="/testing">
-              <p>Testing</p>
+              <p>Financial</p>
             </a>
             <a href="/testing">
-              <p>Testing</p>
-            </a>
-            <a href="/testing">
-              <p>Testing</p>
-            </a>
-            <a href="/testing">
-              <p>Testing</p>
+              <p>Orientation</p>
             </a>
           </div>
           <div className="sb-footer-links-div">
@@ -43,16 +37,7 @@ function Footer() {
           <div className="sb-footer-links-div">
             <h4>Company</h4>
             <a href="/testing2">
-              <p>testing 2</p>
-            </a>
-            <a href="/testing2">
-              <p>testing 2</p>
-            </a>
-            <a href="/testing2">
-              <p>testing 2</p>
-            </a>
-            <a href="/testing2">
-              <p>testing 2</p>
+              <p>Banks</p>
             </a>
           </div>
           <div className="sb-footer-links-div">
