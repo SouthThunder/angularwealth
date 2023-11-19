@@ -16,13 +16,20 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    border: 1px solid black;
     flex-wrap: wrap;
 }
 
 .home > .n1:first-child {
-    background-image: url("../../assets/img/market.jpg");;
+    background-image: url("../../assets/img/market.jpg");
     padding: 1%;
+}
+
+.home > .n1:first-child .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
 }
 
 .home > .n1:first-child .first-header {
@@ -57,7 +64,6 @@
 }
 
 .home > .n1 > .container img{
-    border: 1px solid black;
     width: 315px;
     height: 180px;
 }
