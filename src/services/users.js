@@ -1,5 +1,6 @@
 
 import axios from 'axios';
+import Cookie from 'js-cookie';
 
 const API_URL = 'http://localhost:8000/api'; // Replace with your localhost URL
 
@@ -10,10 +11,25 @@ export const getToken = async (email, password) => {
       email,
       password
     });
-    return response.data?.token;
+    return response;
   } catch (error) {
     console.error('Error:', error);
-    throw error;
+    return error.response
+  }
+};
+
+export const authToken = async (token) => {
+  try {
+    const response = await axios.get(`${API_URL}/auth`, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    });
+    return response;
+  }
+  catch (error) {
+    Cookie.remove('token');
+    console.error('Error:', error);
   }
 };
 
