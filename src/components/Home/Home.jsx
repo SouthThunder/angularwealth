@@ -2,6 +2,9 @@ import React, { useEffect } from "react";
 import Button from "../Common/Buttons/Button";
 import Header from "../Common/Header/Header";
 import Footer from "../Common/Footer/Footer";
+import asesoramientoImage from "../../assets/img/asesoramiento.jpg";
+import finanzasImage from "../../assets/img/finanzas.webp";
+import roadImage from "../../assets/img/Road.png";
 import "./Home.css";
 
 export const Home = () => {
@@ -12,8 +15,8 @@ export const Home = () => {
       <div className="home">
         <div className="n1">
           <div className="container">
-            <h1>Tu camino hacia un futuro sólido y próspero</h1>
-            <p>
+            <h1 className="first-header">Tu camino hacia un futuro sólido y próspero</h1>
+            <p className="first-paragraph">
               En Angular Wealth te ayudamos a tomar las mejores decisiones de
               inversión para que puedas alcanzar tus metas financieras.
             </p>
@@ -32,7 +35,7 @@ export const Home = () => {
             </div>
             <div className="right">
               <img
-                src="https://www.nerdwallet.com/assets/blog/wp-content/uploads/2016/04/financial-advisor-illustration.png"
+                src={asesoramientoImage}
                 alt=""
               />
             </div>
@@ -40,7 +43,7 @@ export const Home = () => {
           <div className="container">
             <div className="left">
               <img
-                src="https://www.nerdwallet.com/assets/blog/wp-content/uploads/2016/04/financial-advisor-illustration.png"
+                src={roadImage}
                 alt=""
               />
             </div>
@@ -67,8 +70,9 @@ export const Home = () => {
             </div>
             <div className="right">
               <img
-                src="https://www.nerdwallet.com/assets/blog/wp-content/uploads/2016/04/financial-advisor-illustration.png"
+                src={finanzasImage}
                 alt=""
+                style={{objectFit: "contain"}}
               />
             </div>
           </div>

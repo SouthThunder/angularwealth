@@ -20,6 +20,19 @@
     flex-wrap: wrap;
 }
 
+.home > .n1:first-child {
+    background-image: url("../../assets/img/market.jpg");;
+    padding: 1%;
+}
+
+.home > .n1:first-child .first-header {
+ color: #91B0DC;
+}
+
+.home > .n1:first-child .first-paragraph{
+  color: white;
+}
+
 .home > .n1 > .container > button{
     margin: 1rem 0;
 }
