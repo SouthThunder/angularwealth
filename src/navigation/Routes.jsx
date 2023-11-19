@@ -8,16 +8,19 @@ import { Saldo } from "../components/Saldo/Saldo";
 import { Estadisticas } from "../components/Estadisticas/Estadisticas";
 import { Tarjetas } from "../components/Tarjetas/Tarjetas";
 import PrivateRoutes from "../utils/PrivateRoute";
+import Cookie from "js-cookie";
 
 const Routing = () => {
+  const token = Cookie.get("token");
+
   return (
     <BrowserRouter>
       <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
+        <Route path="/" element={token? <Saldo/>: <Home />} />
+        <Route path="/login" element={token? <Saldo/>:<Login />} />
+        <Route path="/register" element={token? <Saldo/>:<Register />} />
         <Route element={<PrivateRoutes />}>
-          <Route path="/inicio" element={<Saldo />} />
+          <Route path="/" element={<Saldo />} />
           <Route path="/estadisticas" element={<Estadisticas />} />
           <Route path="/tarjetas" element={<Tarjetas />} />
         </Route>
