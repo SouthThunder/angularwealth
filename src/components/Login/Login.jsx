@@ -4,6 +4,9 @@ import Header from "../Common/Header/Header";
 import Footer from "../Common/Footer/Footer";
 import { Password } from "../Common/PasswordInput/Password";
 import {FaFacebook, FaGoogle} from 'react-icons/fa'
+import { getToken } from "../../services/users";
+import Cookies from 'js-cookie';
+
 import "./Login.css";
 
 export const Login = () => {
@@ -31,9 +34,13 @@ export const Login = () => {
       }
     }
 
-    // Si no hay errores, continuar con el inicio de sesión
-    console.log(`Email: ${loginForm.email}, Password: ${loginForm.password}`);
+    fetchData()
     setFormError(null);
+  };
+
+  const fetchData = async () => {
+    const token = await getToken(loginForm.email, loginForm.password);
+    Cookies.set('token', token, { expires: 7, secure: true });
   };
 
   return (
