@@ -1,4 +1,4 @@
-import React from "react";
+import {useState} from "react";
 import { Sidebar } from "../Common/Sidebar/Sidebar";
 import { Piechart } from "../Common/Piechart/Piechart";
 import ItemList from "../Common/Itemlist/Itemlist";
@@ -7,6 +7,7 @@ import { AddExpense } from "../Common/AddExpense/AddExpense";
 import "./Saldo.css";
 
 export const Saldo = () => {
+  const [showPopup, setShowPopup] = useState(false);
   return (
     <div className="container">
       <Sidebar />
@@ -19,8 +20,10 @@ export const Saldo = () => {
         </div>
         <div className="bottom">
           <ItemList text='Historial de actividades' />
-          <Button text= 'Añadir Gasto'/>
-          <AddExpense />
+          <Button text= 'Añadir Gasto' onClick={() => setShowPopup(true)}/>
+          {
+            showPopup ? <AddExpense visibility={setShowPopup}/> : null
+          }
         </div>
       </div>
     </div>

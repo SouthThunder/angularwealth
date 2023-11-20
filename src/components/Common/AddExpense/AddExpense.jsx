@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Button from "../Buttons/Button";
 import { createGasto } from "../../../services/gastos";
 import { formatDate } from "../../../utils/helpers";
@@ -6,13 +6,27 @@ import {useSelector}  from 'react-redux'
 
 import "./AddExpense.css";
 
-export const AddExpense = () => {
+export const AddExpense = ({visibility}) => {
+  const popup = useRef();
   const user = useSelector(state => state.user)
   const [form, setForm] = useState({
     tipo_gasto: "Fijo",
     descripcion_gasto: "",
     monto_gasto: "",
   });
+
+  const visible = () => {
+    visibility(false)
+  }
+
+  useEffect(() => {
+    let handler = (event) => {
+      if (!popup.current?.contains(event.target)) {
+        visible()
+      }
+    }
+    document.addEventListener("mousedown", handler);
+  }, []);
   
   const [error, setError] = useState({
     tipo_gasto: "",
@@ -75,7 +89,7 @@ export const AddExpense = () => {
   };
   
   return (
-    <div className="addExpense">
+    <div className="addExpense" ref={popup}>
       <h2>Añadir Gasto</h2>
       <form onSubmit={handleSubmit}>
         <div className="box">
