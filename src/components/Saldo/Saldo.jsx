@@ -2,6 +2,8 @@ import React from "react";
 import { Sidebar } from "../Common/Sidebar/Sidebar";
 import { Piechart } from "../Common/Piechart/Piechart";
 import ItemList from "../Common/Itemlist/Itemlist";
+import Button from "../Common/Buttons/Button";
+import { AddExpense } from "../Common/AddExpense/AddExpense";
 import "./Saldo.css";
 
 export const Saldo = () => {
@@ -17,6 +19,8 @@ export const Saldo = () => {
         </div>
         <div className="bottom">
           <ItemList text='Historial de actividades' />
+          <Button text= 'Añadir Gasto'/>
+          <AddExpense />
         </div>
       </div>
     </div>
