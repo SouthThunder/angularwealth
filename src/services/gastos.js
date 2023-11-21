@@ -39,7 +39,6 @@ export const createGasto = async (fecha_gasto, id_usuario , data) => {
   try {
     const response = await axios.post(`${API_URL}/gasto/add`, 
       {
-        
         id_usuario,
         ...data,
         fecha_gasto,
@@ -59,6 +58,32 @@ export const getSumOfGastosByMonthAndUserId = async (userId) => {
     const gastos = new Gasto(gastosData.total_monto, gastosData.month);
     return gastos;
   } catch (error) {
+    console.error('Error:', error);
+    throw error;
+  }
+}
+
+export const getGastosByUserIdAndCurrentMonth = async (userId) => {
+  try {
+    const response = await axios.get(`${API_URL}/gasto/all/month/${userId}`);
+    const gastosData = response.data;
+    const gastos = gastosData.map((gasto) => new Gasto(gasto.monto_gasto, gasto.fecha_gasto, gasto.tipo_gasto, gasto.descripcion_gasto, gasto.id_gasto));
+    return gastos;
+  }
+  catch (error) {
+    console.error('Error:', error);
+    throw error;
+  }
+}
+
+export const getPredictByIA = async (userId) => {
+  try {
+    const response = await axios.get(`${API_URL}/prediction/budget/month/${userId}`);
+    const yearlyBudget = response.data.historicalData.concat(response.data.predictions);
+    const yearlyPlan = yearlyBudget.map((budget) => new Gasto(budget.budget, budget.month));
+    return yearlyPlan;
+  }
+  catch (error) {
     console.error('Error:', error);
     throw error;
   }

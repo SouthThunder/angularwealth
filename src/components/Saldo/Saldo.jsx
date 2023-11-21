@@ -1,22 +1,24 @@
-import {useEffect, useRef, useState} from "react";
+import { useEffect, useRef, useState } from "react";
 import { Sidebar } from "../Common/Sidebar/Sidebar";
 import { Piechart } from "../Common/Piechart/Piechart";
 import ItemList from "../Common/Itemlist/Itemlist";
 import Button from "../Common/Buttons/Button";
 import { AddExpense } from "../Common/AddExpense/AddExpense";
-import {useSelector}  from 'react-redux' 
-import { getSumOfGastosByMonthAndUserId, getFijoGastosByUserId } from "../../services/gastos";
+import { useSelector } from "react-redux";
+import {
+  getSumOfGastosByMonthAndUserId,
+  getFijoGastosByUserId,
+} from "../../services/gastos";
 import "./Saldo.css";
 
 export const Saldo = () => {
   const [showPopup, setShowPopup] = useState(false);
-  const user = useSelector(state => state.user)
+  const user = useSelector((state) => state.user);
   const [gastosSum, setGastosSum] = useState(null);
   const [itemList, setItemList] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const firstLoad = useRef(true);
-
 
   useEffect(() => {
     if (firstLoad.current) {
@@ -46,7 +48,6 @@ export const Saldo = () => {
     return <p>Error al cargar los datos</p>;
   }
 
-
   return (
     <div className="container">
       <Sidebar />
@@ -54,15 +55,18 @@ export const Saldo = () => {
         <h1 className="title">Saldo</h1>
         <hr />
         <div className="top">
-          <GastosIngresos inputs= {gastosSum}/>
-          <Piechart inputs={gastosSum}/>
+          <GastosIngresos inputs={gastosSum} />
+          <Piechart
+            inputs={[
+              { name: "Gastos", value: gastosSum.monto_gasto * 2 },
+              { name: "Ingresos", value: user.sueldo },
+            ]}
+          />
         </div>
         <div className="bottom">
-          <ItemList text='Historial de actividades' items={itemList}/>
-          <Button text= 'Añadir Gasto' onClick={() => setShowPopup(true)}/>
-          {
-            showPopup ? <AddExpense visibility={setShowPopup}/> : null
-          }
+          <ItemList text="Historial de actividades" items={itemList} />
+          <Button text="Añadir Gasto" onClick={() => setShowPopup(true)} />
+          {showPopup ? <AddExpense visibility={setShowPopup} /> : null}
         </div>
       </div>
     </div>
@@ -71,8 +75,8 @@ export const Saldo = () => {
 
 export default Saldo;
 
-const GastosIngresos = ({inputs}) => {
-  const user = useSelector(state => state.user)
+const GastosIngresos = ({ inputs }) => {
+  const user = useSelector((state) => state.user);
 
   return (
     <div className="gastos-ingresos">

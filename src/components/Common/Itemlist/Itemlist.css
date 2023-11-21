@@ -61,7 +61,13 @@
     flex: 1;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
+
+.itemlist > .listItem .item h2{
+    text-align: center;
+}
+
 
 .itemlist > .listItem .icon{
     display: flex;
