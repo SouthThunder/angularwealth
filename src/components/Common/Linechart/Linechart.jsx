@@ -61,8 +61,8 @@ export class Linechart extends React.Component {
           },
         },
         yaxis: {
-          min: Math.min(...props.data.map((gasto) => gasto.monto_gasto)),
-          max: Math.max(...props.data.map((gasto) => gasto.monto_gasto)),
+          min: (Math.min(...props.data.map((gasto) => gasto.monto_gasto)) - 500),
+          max: (Math.max(...props.data.map((gasto) => gasto.monto_gasto)) + 500),
         },
       },
     };

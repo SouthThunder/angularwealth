@@ -1,6 +1,6 @@
 export class Gasto {
   constructor(monto_gasto, fecha_gasto, tipo_gasto, descripcion_gasto, id_gasto) {
-    this.monto_gasto = monto_gasto.toFixed(2);
+    this.monto_gasto = monto_gasto;
     this.fecha_gasto = fecha_gasto;
     this.tipo_gasto = tipo_gasto;
     this.descripcion_gasto = descripcion_gasto;

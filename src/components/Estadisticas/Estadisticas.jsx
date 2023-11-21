@@ -43,6 +43,7 @@ export const Estadisticas = () => {
       firstLoad.current = false;
     }
   }, [inputs, budget]);
+  console.log(inputs)
 
   if (loading) {
     return <p>Cargando...</p>;
