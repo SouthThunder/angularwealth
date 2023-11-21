@@ -1,0 +1,90 @@
+.holder{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.holder .cards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid black;
+    padding: 1rem;
+    width: 350px;
+    height: 500px;
+    border-radius: var(--md-border);
+}
+
+.holder .cards .title,
+.holder .cards .price,
+.holder .cards .info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex: 1;
+    width: 100%;
+    text-align: center;
+}
+
+.holder .cards .price p{
+    width: 100%;
+    text-align: right;
+    margin-right: 2rem;
+}
+
+.holder .cards .price h1{
+    font-size: 2.5rem;
+}
+
+.holder .cards .info{
+    flex: 2;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 0 2rem;
+    gap: 1rem;
+}
+
+.holder .cards .info ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.holder .cards .info ul li{
+    display: flex;
+    justify-content: flex-start;
+    text-align: justify;
+    width: 100%;
+    height: 100%;
+}
+
+.holder .cards button{
+    margin: 1rem;
+}
+
+.holder + .data{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 90%;
+    height: 100%;
+    margin: auto;
+}
+
+.holder + .data ul li{
+    list-style:decimal;
+    margin: 1rem;
+}
+
+.holder + .data ul li p p{
+    font-weight: 700;
+}

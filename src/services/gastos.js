@@ -55,6 +55,7 @@ export const getSumOfGastosByMonthAndUserId = async (userId) => {
   try {
     const response = await axios.get(`${API_URL}/gasto/sum/month/${userId}`);
     const gastosData = response.data[0];
+    console.log(gastosData)
     const gastos = new Gasto(gastosData.total_monto, gastosData.month);
     return gastos;
   } catch (error) {

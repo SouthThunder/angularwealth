@@ -36,7 +36,7 @@ export const authToken = async (token) => {
 // Function to make a POST request
 export const createUser = async (nombre_usuario, apellido_usuario, correo_usuario, contrasena_usuario) => {
   try {
-    const response = await axios.post(`${API_URL}//usuario/create`, 
+    const response = await axios.post(`${API_URL}/usuario/create`, 
       {
         nombre_usuario,
         apellido_usuario,

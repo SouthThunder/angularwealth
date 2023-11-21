@@ -9,14 +9,14 @@ import { FiHelpCircle, FiBarChart2 } from "react-icons/fi";
 import { BsBell, BsFolder } from "react-icons/bs";
 import { MdShowChart } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
-import {useSelector}  from 'react-redux' 
+import { useSelector } from "react-redux";
 
 import "./Sidebar.css";
 import Button from "../Buttons/Button";
 
 export const Sidebar = () => {
-  const user = useSelector(state => state.user)
-  const navigate = useNavigate()
+  const user = useSelector((state) => state.user);
+  const navigate = useNavigate();
 
   return (
     <div className="sidebar">
@@ -26,7 +26,7 @@ export const Sidebar = () => {
       </div>
       <div className="user">
         <FaUserCircle />
-        <h3>{user.name + ' ' + user.lastname}</h3>
+        <h3>{user.name + " " + user.lastname}</h3>
         <BsBell />
       </div>
       <div className="section">
@@ -34,19 +34,22 @@ export const Sidebar = () => {
         <ul>
           <li>
             <FaHome />
-            <Button text="Inicio" onClick={() => navigate('/')} />
+            <Button text="Inicio" onClick={() => navigate("/")} />
           </li>
           <li>
             <FaDollarSign />
-            <Button text="Deudas" onClick={() => navigate('/deudas')}/>
+            <Button text="Deudas" onClick={() => navigate("/deudas")} />
           </li>
           <li>
             <FiBarChart2 />
-            <Button text="Estadisticas" onClick={() => navigate('/estadisticas')}/>
+            <Button
+              text="Estadisticas"
+              onClick={() => navigate("/estadisticas")}
+            />
           </li>
           <li>
             <FaCreditCard />
-            <Button text="Tarjetas" onClick={() => navigate('/tarjetas')}/>
+            <Button text="Tarjetas" onClick={() => navigate("/tarjetas")} />
           </li>
         </ul>
       </div>
@@ -55,7 +58,7 @@ export const Sidebar = () => {
         <h4>Oportunidades</h4>
         <ul>
           <li>
-          <MdShowChart/>
+            <MdShowChart />
             <Button text="Inversiones" />
           </li>
         </ul>
@@ -65,11 +68,11 @@ export const Sidebar = () => {
         <h4>Categorías</h4>
         <ul>
           <li>
-          <BsFolder/>
+            <BsFolder />
             <Button text="Item 1" />
           </li>
           <li>
-          <BsFolder/>
+            <BsFolder />
             <Button text="Item 2" />
           </li>
         </ul>
@@ -79,7 +82,7 @@ export const Sidebar = () => {
         <ul>
           <li>
             <FaGear />
-            <Button text="Configuracion" />
+            <Button text="Configuracion" onClick={() => navigate('/plans')}/>
           </li>
           <li>
             <FiHelpCircle />

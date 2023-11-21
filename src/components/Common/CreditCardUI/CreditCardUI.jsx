@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Cards from "react-credit-cards";
+import Button from "../Buttons/Button";
 import "react-credit-cards/es/styles-compiled.css";
 import "./CreditCardUI.css";
 
@@ -100,6 +101,7 @@ const CreditCard = () => {
             ></input>
           </div>
         </div>
+        <Button text= 'Añadir'/>
       </form>
     </div>
   );

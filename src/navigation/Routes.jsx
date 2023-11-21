@@ -6,6 +6,7 @@ import { Register } from "../components/Register/Register";
 import { Saldo } from "../components/Saldo/Saldo";
 import { Estadisticas } from "../components/Estadisticas/Estadisticas";
 import { Tarjetas } from "../components/Tarjetas/Tarjetas";
+import { Plans } from "../components/Plans/Plans";
 import PrivateRoutes from "../utils/PrivateRoute";
 import Cookie from "js-cookie";
 import { authToken } from "../services/users";
@@ -44,6 +45,7 @@ const Routing = () => {
           <Route path="/" element={<Saldo />} />
           <Route path="/estadisticas" element={<Estadisticas />} />
           <Route path="/tarjetas" element={<Tarjetas />} />
+          <Route path="/plans" element={<Plans />} />
         </Route>
       </Routes>
     </BrowserRouter>
