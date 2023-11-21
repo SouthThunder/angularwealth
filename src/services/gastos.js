@@ -1,6 +1,7 @@
 
 import axios from 'axios';
 import Cookie from 'js-cookie';
+import Gasto from '../models/Gasto';
 
 const API_URL = 'http://localhost:8000/api'; // Replace with your localhost URL
 
@@ -50,6 +51,30 @@ export const createGasto = async (fecha_gasto, id_usuario , data) => {
     throw error;
   }
 };
+
+export const getSumOfGastosByMonthAndUserId = async (userId) => {
+  try {
+    const response = await axios.get(`${API_URL}/gasto/sum/month/${userId}`);
+    const gastosData = response.data[0];
+    const gastos = new Gasto(gastosData.total_monto, gastosData.month);
+    return gastos;
+  } catch (error) {
+    console.error('Error:', error);
+    throw error;
+  }
+}
+
+export const getFijoGastosByUserId = async (userId) => {
+  try {
+    const response = await axios.get(`${API_URL}/gasto/fijos/${userId}`);
+    const gastosData = response.data;
+    const gastos = gastosData.map((gasto) => new Gasto(gasto.monto_gasto, gasto.fecha_gasto, gasto.tipo_gasto, gasto.descripcion_gasto, gasto.id_gasto));
+    return gastos;
+  } catch (error) {
+    console.error('Error:', error);
+    throw error;
+  }
+}
 
 // Function to make a PUT request
 export const putData = async (id, data) => {

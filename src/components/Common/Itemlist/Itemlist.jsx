@@ -3,6 +3,7 @@ import "./Itemlist.css";
 
 function ItemList({ text, items }) {
   const [option, setOption] = useState(null);
+  console.log(items)
   return (
     <div className="itemlist">
       <h2>{text}</h2>
@@ -12,10 +13,20 @@ function ItemList({ text, items }) {
       </div>
       <hr />
       {items && items.length > 0 ? (
-        items[option].map((item) => (
-          <div key={item.id}>
-            <h2>{item.name}</h2>
-            <p>{item.description}</p>
+        items.map((item) => (
+          <div key={item.id_gasto} className="listItem">
+            <div className="item">
+              <div className="icon"></div>
+            </div>
+            <div className="item">
+              <h2>{item.descripcion_gasto}</h2>
+            </div>
+            <div className="item">
+              <p>{item.monto_gasto}</p>
+            </div>
+            <div className="item">
+              <p>{item.fecha_gasto}</p>
+            </div>
           </div>
         ))
       ) : (

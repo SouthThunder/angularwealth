@@ -22,6 +22,7 @@ export const AddExpense = ({visibility}) => {
   useEffect(() => {
     let handler = (event) => {
       if (!popup.current?.contains(event.target)) {
+        console.log("click afuera");
         visible()
       }
     }
