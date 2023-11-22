@@ -1,0 +1,52 @@
+.top-left{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.top-left .holder{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.top-left .holder .card{
+    padding: 1rem;
+    border-radius: var(--md-border);
+    border: 1px solid var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.top-right{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.top-right .holder{
+    gap: 3rem;
+}
+
+.top-right .holder .item{
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    gap: 2rem;
+}
+
+.top-right .holder .item .icon{
+    width: 2rem;
+    height: 2rem;
+}
+
+.top-right .holder .item .icon svg{
+    width: 2rem;
+    height: 2rem;
+}

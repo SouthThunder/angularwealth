@@ -1,0 +1,61 @@
+.addExpense{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    z-index: 1;
+    width: 400px;
+    padding: 1rem;
+    border: 1px solid var(--secondary-color);
+    background-color: white;
+    transform: translatey(-50%);
+    border-radius: var(--sm-border);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.addExpense > h2{
+    margin-top: 1rem;
+}
+
+.addExpense form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 90%;
+}
+
+.addExpense form > .box{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    width: 100%;
+}
+
+.addExpense form > .box > input,
+.addExpense form > .box > select
+{
+    width: 100%;
+    padding: .5rem;
+    border: none;
+    border-bottom: 1px solid black;
+    font-size: 1rem;
+    resize: none;
+}
+
+.addExpense form > .box > textarea{
+    width: 100%;
+    padding: .5rem;
+    border: 1px solid black;
+    border-radius: var(--sm-border);
+    font-size: 1rem;
+    resize: none;
+}
+
+.addExpense form > .box > input:active,
+.addExpense form > .box > input:focus,
+.addExpense form > .box > select:focus{
+    outline: none;
+}

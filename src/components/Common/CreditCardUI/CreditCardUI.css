@@ -1,0 +1,53 @@
+.card{
+    display: flex;
+    flex-direction: column;
+}
+
+.card form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card form button{
+    margin: 2rem 0;
+}
+
+.card form .row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.card form .row .row-col{
+    display: flex;
+    flex-direction: column;
+}
+
+.card form .row .row-col label{
+    font-size: 0.8rem;
+}
+
+.card form .row .row-col input{
+    height: 2rem;
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+.card form .row .row-col input:focus,
+.card form .row .row-col input:active{
+    outline: none;
+    border-bottom: 1px solid var(--primary-color);
+}
+
+.rccs__card,
+.rccs__card--back,
+.rccs,
+.rccs__card--front {
+    border-radius: var(--md-border);
+}
+

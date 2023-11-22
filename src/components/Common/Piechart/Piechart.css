@@ -1,0 +1,17 @@
+.piechart{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 0;
+    flex: 1;
+}
+
+.piechart > h2{
+    margin: 0 auto;
+    margin-bottom: -5rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-align: center;
+}
