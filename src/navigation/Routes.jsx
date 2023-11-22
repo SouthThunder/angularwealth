@@ -12,10 +12,11 @@ import Cookie from "js-cookie";
 import { authToken } from "../services/users";
 import { useDispatch } from "react-redux";
 import { login } from "../redux/userSlice";
+import { Deudas } from "../components/Deudas/Deudas";
 
 const Routing = () => {
   const [auth, setAuth] = useState(false);
-  const firstLoad = useRef(true)
+  const firstLoad = useRef(true);
   const dispatch = useDispatch();
 
   const verifyToken = async () => {
@@ -29,7 +30,7 @@ const Routing = () => {
   };
 
   useEffect(() => {
-    if(Cookie.get("token") && firstLoad.current){
+    if (Cookie.get("token") && firstLoad.current) {
       verifyToken();
       firstLoad.current = false;
     }
@@ -42,7 +43,7 @@ const Routing = () => {
         <Route path="/login" element={auth ? <Saldo /> : <Login />} />
         <Route path="/register" element={auth ? <Saldo /> : <Register />} />
         <Route element={<PrivateRoutes />}>
-          <Route path="/" element={<Saldo />} />
+          <Route path="/deudas" element={<Deudas />} />
           <Route path="/estadisticas" element={<Estadisticas />} />
           <Route path="/tarjetas" element={<Tarjetas />} />
           <Route path="/plans" element={<Plans />} />
