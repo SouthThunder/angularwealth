@@ -59,7 +59,7 @@ export const Sidebar = () => {
         <ul>
           <li>
             <MdShowChart />
-            <Button text="Inversiones" onClick={() => navigate("/inversiones")} />
+            <Button text="Inversiones" />
           </li>
         </ul>
       </div>

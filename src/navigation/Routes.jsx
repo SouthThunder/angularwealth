@@ -13,7 +13,6 @@ import { authToken } from "../services/users";
 import { useDispatch } from "react-redux";
 import { login } from "../redux/userSlice";
 import { Deudas } from "../components/Deudas/Deudas";
-import { Inversiones } from "../components/Inversiones/Inversiones";
 
 const Routing = () => {
   const [auth, setAuth] = useState(false);
@@ -48,7 +47,6 @@ const Routing = () => {
           <Route path="/estadisticas" element={<Estadisticas />} />
           <Route path="/tarjetas" element={<Tarjetas />} />
           <Route path="/plans" element={<Plans />} />
-          <Route path="/inversiones" element={<Inversiones />} />
         </Route>
       </Routes>
     </BrowserRouter>
